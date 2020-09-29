@@ -1,0 +1,48 @@
+﻿@page "/todo"
+@using Blazor.Data
+@inject HttpHandlerService handler
+@using Newtonsoft.Json
+
+@code {
+    private IList<TodoItem> todos = new List<TodoItem>();
+    private Boolean isComplete;
+    private string name;
+
+    private void AddTodo()
+    {
+        handler.PostPR("https://localhost:5001/Todo", System.Text.Json.JsonSerializer.Serialize(new TodoItem { Name = name, IsComplete = isComplete }));
+        GetTodo();
+    }
+
+    private void GetTodo()
+    {
+        string list = handler.GetPR("https://localhost:5001/todo");
+        todos = JsonConvert.DeserializeObject<IList<TodoItem>>(list);
+    }
+}
+<h3>Todo </h3>
+
+<ul>
+    @if (todos.Count == 0)
+    {
+        GetTodo();
+        @if (todos.Count != 0)
+        {
+            @foreach (var todo1 in todos)
+            {
+                <li>
+                    <input type="checkbox" @bind="todo1.IsComplete" />
+                    <input @bind="todo1.Name" />
+                </li>
+            }
+        }
+        else
+        {
+            <li>List empty</li>
+        }
+    }
+</ul>
+
+<input type="checkbox" @bind="isComplete" />
+<input methodplaceholder="Someting todo" @bind="name" />
+<button @onclick="AddTodo">Add todo</button>

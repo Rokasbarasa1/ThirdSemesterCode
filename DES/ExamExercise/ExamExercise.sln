@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExamExercise", "ExamExercise\ExamExercise.csproj", "{394A3EF8-FC55-42F1-BA93-8731877BA136}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor", "Blazor\Blazor.csproj", "{66D559F9-692A-4164-A409-A13D07D5ECA0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{394A3EF8-FC55-42F1-BA93-8731877BA136}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{394A3EF8-FC55-42F1-BA93-8731877BA136}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{394A3EF8-FC55-42F1-BA93-8731877BA136}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{394A3EF8-FC55-42F1-BA93-8731877BA136}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66D559F9-692A-4164-A409-A13D07D5ECA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66D559F9-692A-4164-A409-A13D07D5ECA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66D559F9-692A-4164-A409-A13D07D5ECA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66D559F9-692A-4164-A409-A13D07D5ECA0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F3B05E5-C7C1-44F7-92CC-BD5DB54F9063}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,30 @@
+﻿@page "/gaspumprefils"
+@using GasPumpWebApp.Data
+@inject HttpService http
+<h1>Pump Maintenance</h1>
+
+<ul>
+    @if (refils.Count == 0)
+    {
+        getRefils();
+        @if (refils.Count != 0)
+        {
+            @foreach (Refil refil in refils)
+            {
+                <li> @refil.id @refil.date</li>
+            }
+        }
+        else
+        {
+            <li>List empty</li>
+        }
+    }
+</ul>
+@code {
+    private IList<Refil> refils = new List<Refil>();
+
+    private void getRefils()
+    {
+        refils = http.GetRefils();
+    }
+}

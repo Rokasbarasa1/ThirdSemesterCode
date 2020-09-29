@@ -1,0 +1,20 @@
+﻿@page
+@using Blazor.Data;
+@inject HttpService http
+<h3>CreateEmployee</h3>
+
+<input type="text" @bind="Name" placeholder="Name" />
+<input type="number" @bind="HourlyWage" placeholder="Name" />
+<input type="number" @bind="HoursPerMonth" placeholder="Name" />
+<button @onclick="Post">Add employee</button>
+@code {
+    private string Name { get; set; }
+    private double HourlyWage { get; set; }
+    private double HoursPerMonth { get; set; }
+
+    public void Post()
+    {
+        if()
+        http.PostPR()
+    }
+}

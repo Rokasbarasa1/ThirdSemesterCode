@@ -1,0 +1,35 @@
+﻿@page
+@model DateModel
+@{
+    ViewData["Title"] = "Date";
+}
+
+@{ 
+    string hello = "Hello from code block";
+}
+
+
+<h1>Date</h1>
+<h2>Today is @DateTime.Now</h2>
+<h2>@hello</h2>
+
+@{ 
+    List<String> strings = new List<string>();
+    strings.Add("Kaakkks");
+    strings.Add("ghasdghs");
+    strings.Add("aeeu552");
+    strings.Add("nyuiiii");
+    strings.Add("SASGH");
+    strings.Add("BNNOOO777");
+}
+
+<ul>
+    @foreach (String item in strings)
+    {
+        <li>@item</li>
+    }
+</ul>
+
+<h3>@Model.Message</h3>
+
+

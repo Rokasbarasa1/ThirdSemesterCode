@@ -1,0 +1,52 @@
+﻿@page "/gaspump"
+@using GasPumpWebApp.Data
+@inject HttpService http
+<h1>GasPump</h1>
+
+<h2>Gas price calculation</h2>
+
+<label>Check price for full tank of gas of size:</label>
+<input type="text" @bind="size" />
+<br />
+<button @onclick="getPriceOfFullTank">Submit</button>
+<label>@response</label>
+
+
+
+<h2>Fill back up gas pump</h2>
+<label>Refil the pump: </label>
+<br />
+<button @onclick="fillPump">Submit</button>
+<label><br /> @refilResponse</label>
+
+
+<h2>Gas fill up</h2>
+<label>Refil amount of your tank: </label>
+<input type="text" @bind="amount" />
+<br />
+<button @onclick="fillTank">Submit</button>
+<p> -1 means the pump doesnt have enough fuel to satisfy your request.</p>
+<label><br /> @tankRefilResponse</label> 
+
+@code {
+    private double size { get; set; }
+    private double amount { get; set; }
+    private string response { get; set; }
+    private string refilResponse { get; set; }
+    private string tankRefilResponse { get; set; }
+
+    private void getPriceOfFullTank()
+    {
+        response = "Cost of full tank: " + http.GetCostOfFullTank(size);
+    }
+
+    private void fillPump()
+    {
+        refilResponse = http.PostFillPump();
+    }
+
+    private void fillTank()
+    {
+        tankRefilResponse = "Paid for refiling of your tank: " + http.GetFillTank(amount);
+    }
+}

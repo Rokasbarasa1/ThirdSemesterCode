@@ -1,0 +1,50 @@
+﻿@page
+@model Razor.Pages.TimeModel
+@{
+    ViewData["Time"] = "Time";
+}
+
+<h1>Time</h1>
+
+<p>Current day is @DateTime.Now.DayOfWeek</p>
+
+@{ 
+    var value = "Hello from code block";
+}
+
+
+<p>String vaue = @value</p>
+@{ 
+    List<string> strings = new List<string>();
+    strings.Add("kaka");
+    strings.Add("Suop");
+    strings.Add("Kata");
+    strings.Add("Nissan");
+    strings.Add("Bird");
+}
+<ul>
+    @for (int i = 0; i < strings.Count; i++)
+    {
+        <li>@strings[i]</li>
+    }
+</ul>
+
+<p>@Model.message</p>
+
+<p>@Model.placeString("Lalala la ")</p>
+
+<form method="post">
+    <input type="number" asp-for="todo.Id" placeholder="id" />
+    <input type="text" asp-for="todo.Name" placeholder="Name" />
+    <input type="text" asp-for="todo.Description" placeholder="Description" />
+    <button type="submit">Submit</button>
+</form>
+
+<ol>
+    @for (int i = 0; i < Model.todos.Count; i++)
+    {
+        <li>@Model.todos[i].ToString()</li>
+    }
+</ol>
+
+
